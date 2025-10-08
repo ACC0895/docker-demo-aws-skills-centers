@@ -744,7 +744,7 @@ Desarrollado con ❤️ para empoderar la próxima generación de profesionales 
 
 ¿Tienes preguntas o quieres profundizar más?
 
-- 👨‍🏫 **Instructor:** Gabriel - [AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 👨‍🏫 **Instructor:** Gabriel - [AWS Hero](https://builder.aws.com/community/@awshero)
 - 🎓 **Bootcamp Institute:** Formación en Cloud Computing para LATAM - [bootcamp.institute](https://bootcamp.institute)
 - 💬 **Comunidad AWS Skills Centers:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 - 🐛 **Reporta issues:** [GitHub Issues](https://github.com/gabanox/docker-demo-aws-skills-centers/issues)

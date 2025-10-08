@@ -10,10 +10,11 @@ Este repositorio contiene un demo completo de Docker enfocado en enseñar orques
 
 ### 👨‍🎓 Si eres ESTUDIANTE:
 
-1. **Empieza aquí:** [GUIA_RAPIDA.md](GUIA_RAPIDA.md) - Comandos esenciales para empezar rápido
-2. **Documentación completa:** [README.md](README.md) - Guía paso a paso con explicaciones detalladas
-3. **Práctica:** [EJERCICIOS.md](EJERCICIOS.md) - 20 ejercicios progresivos
-4. **Conceptos avanzados:** [CONCEPTOS_ECS.md](CONCEPTOS_ECS.md) - Relación con AWS ECS
+1. **🚀 Empieza aquí:** [INICIO_RAPIDO.md](INICIO_RAPIDO.md) - Comienza en 5 minutos
+2. **⚡ Referencia rápida:** [GUIA_RAPIDA.md](GUIA_RAPIDA.md) - Comandos esenciales
+3. **📖 Documentación completa:** [README.md](README.md) - Guía paso a paso
+4. **🎯 Práctica:** [EJERCICIOS.md](EJERCICIOS.md) - 20 ejercicios progresivos
+5. **☁️ Conceptos avanzados:** [CONCEPTOS_ECS.md](CONCEPTOS_ECS.md) - Relación con AWS ECS
 
 ### 👨‍🏫 Si eres INSTRUCTOR:
 
@@ -29,12 +30,13 @@ Este repositorio contiene un demo completo de Docker enfocado en enseñar orques
 
 | Archivo | Descripción | Para quién |
 |---------|-------------|------------|
-| **[README.md](README.md)** | Documentación principal con tutorial completo en 2 partes | Estudiantes y todos |
-| **[GUIA_RAPIDA.md](GUIA_RAPIDA.md)** | Referencia rápida de comandos esenciales | Estudiantes |
-| **[EJERCICIOS.md](EJERCICIOS.md)** | 20 ejercicios prácticos progresivos | Estudiantes |
-| **[CONCEPTOS_ECS.md](CONCEPTOS_ECS.md)** | Mapeo de conceptos Docker → AWS ECS | Estudiantes avanzados |
-| **[GUIA_INSTRUCTOR.md](GUIA_INSTRUCTOR.md)** | Metodología pedagógica y tips de enseñanza | Instructores |
-| **[INDICE.md](INDICE.md)** | Este archivo - navegación del repo | Todos |
+| 🚀 **[INICIO_RAPIDO.md](INICIO_RAPIDO.md)** | Comienza en 5 minutos - Primera vez aquí | Todos (Comenzar aquí) |
+| 📖 **[README.md](README.md)** | Documentación principal con tutorial completo en 2 partes | Estudiantes y todos |
+| ⚡ **[GUIA_RAPIDA.md](GUIA_RAPIDA.md)** | Referencia rápida de comandos esenciales | Estudiantes |
+| 🎯 **[EJERCICIOS.md](EJERCICIOS.md)** | 20 ejercicios prácticos progresivos | Estudiantes |
+| ☁️ **[CONCEPTOS_ECS.md](CONCEPTOS_ECS.md)** | Mapeo de conceptos Docker → AWS ECS | Estudiantes avanzados |
+| 👨‍🏫 **[GUIA_INSTRUCTOR.md](GUIA_INSTRUCTOR.md)** | Metodología pedagógica y tips de enseñanza | Instructores |
+| 📑 **[INDICE.md](INDICE.md)** | Este archivo - navegación del repo | Todos |
 
 ### 🗂️ Archivos de Configuración
 

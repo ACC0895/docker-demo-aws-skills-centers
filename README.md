@@ -149,7 +149,7 @@ graph LR
 
 ```bash
 # Navega al directorio del proyecto
-cd /Users/gabriel/docker-demo
+cd docker-demo
 
 # Construye la imagen desde el Dockerfile
 docker build -t aws-skills-centers-demo:v1 .

@@ -1,0 +1,148 @@
+# ========================================
+# Docker Compose - Orquestador de Contenedores
+# ========================================
+# Este archivo define TODOS los servicios de la aplicación
+# Con UN SOLO COMANDO puedes gestionar múltiples contenedores
+#
+# Esto es similar a cómo AWS ECS gestiona contenedores,
+# pero todo corriendo localmente en tu máquina.
+#
+# Comando para iniciar: docker-compose up -d
+# Comando para escalar: docker-compose up -d --scale aws-skills-centers-demo=3
+# Comando para detener: docker-compose down
+# ========================================
+
+services:
+  # ==========================================
+  # SERVICIO 1: Aplicación Web Frontend
+  # ==========================================
+  # Este servicio representa tu aplicación web principal
+  # En AWS ECS, esto sería una "Task Definition"
+  
+  aws-skills-centers-demo:
+    # SIN container_name para permitir escalado
+    # Docker asignará nombres automáticamente:
+    # docker-demo-aws-skills-centers-demo-1
+    # docker-demo-aws-skills-centers-demo-2
+    # docker-demo-aws-skills-centers-demo-3
+    
+    # Construir desde el Dockerfile en el directorio actual
+    # El orquestador construye la imagen automáticamente
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # PUERTOS DINÁMICOS para permitir múltiples instancias
+    # Instancia 1: http://localhost:8080
+    # Instancia 2: http://localhost:8081
+    # Instancia 3: http://localhost:8082
+    # Para más instancias, amplía el rango: "8080-8089:80"
+    ports:
+      - "8080-8082:80"
+    
+    # Política de reinicio automático
+    # El ORQUESTADOR reinicia el contenedor si falla
+    # Esto es clave para alta disponibilidad
+    restart: unless-stopped
+    
+    # Labels para organización y búsqueda
+    # En AWS, usarías tags similares
+    labels:
+      project: "aws-skills-centers-demo"
+      environment: "development"
+      maintainer: "Bootcamp Institute"
+      tier: "frontend"
+      description: "Demo web para aprender Docker y orquestacion"
+    
+    # Límites de recursos (CPU y Memoria)
+    # El ORQUESTADOR asegura que el contenedor no use más de esto
+    # En AWS ECS, defines lo mismo en las Task Definitions
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'        # Máximo 50% de 1 CPU
+          memory: 128M       # Máximo 128 MB de RAM
+        reservations:
+          cpus: '0.25'       # Mínimo garantizado: 25% de 1 CPU
+          memory: 64M        # Mínimo garantizado: 64 MB de RAM
+    
+    # Variables de entorno (opcional)
+    # Puedes pasar configuración al contenedor
+    environment:
+      - APP_NAME=AWS Skills Centers Demo
+      - APP_VERSION=1.0
+      - ENVIRONMENT=development
+    
+    # Health check - verifica que el contenedor esté saludable
+    # El ORQUESTADOR puede reiniciar automáticamente si falla
+    # En AWS ECS, los health checks son fundamentales
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s      # Revisa cada 30 segundos
+      timeout: 3s        # Timeout de 3 segundos
+      retries: 3         # Reinicia después de 3 fallos
+      start_period: 5s   # Espera 5s antes de empezar a revisar
+
+# ==========================================
+# REDES - Networking Automático
+# ==========================================
+# El ORQUESTADOR crea una red virtual automáticamente
+# Todos los servicios pueden comunicarse entre sí por nombre
+# En AWS ECS, esto se maneja con VPC y Security Groups
+
+networks:
+  default:
+    name: aws-skills-centers-network
+    driver: bridge
+
+# ==========================================
+# NOTAS IMPORTANTES PARA ESTUDIANTES
+# ==========================================
+#
+# 🎯 CONCEPTOS CLAVE DE ORQUESTACIÓN:
+#
+# 1. DECLARATIVO vs IMPERATIVO:
+#    - Este archivo es DECLARATIVO: describes QUÉ quieres
+#    - Los comandos docker run son IMPERATIVOS: describes CÓMO hacerlo
+#
+# 2. VENTAJAS DEL ORQUESTADOR:
+#    - Un solo comando para todo: docker-compose up
+#    - Configuración versionable (puedes guardar en Git)
+#    - Reproducible (mismo resultado siempre)
+#    - Fácil de escalar: docker-compose up --scale aws-skills-centers-demo=3
+#    - Gestión automática de redes
+#    - Reinicio automático si algo falla
+#
+# 3. ESCALADO CON PUERTOS DINÁMICOS:
+#    - Sin container_name fijo: permite múltiples instancias
+#    - Puertos dinámicos (8080-8082): cada instancia usa un puerto diferente
+#    - En AWS ECS + ALB: esto se maneja automáticamente con un solo endpoint
+#
+# 4. RELACIÓN CON AWS ECS:
+#    Docker Compose (local)     →  AWS ECS (nube)
+#    ---------------------         ------------------
+#    services                   →  Task Definitions
+#    docker-compose up          →  Create Service
+#    Sin container_name         →  Task (nombres auto)
+#    restart: unless-stopped    →  Service Auto Scaling
+#    networks                   →  VPC + Security Groups
+#    deploy.resources           →  Task CPU/Memory
+#    healthcheck                →  Health Checks
+#    Puertos manuales           →  ALB + puertos dinámicos
+#
+# 5. PARA EXPERIMENTAR:
+#    - Escala a 3 instancias: docker-compose up -d --scale aws-skills-centers-demo=3
+#    - Accede a cada instancia: http://localhost:8080, 8081, 8082
+#    - Agrega un segundo servicio (ej: base de datos)
+#    - Modifica los límites de recursos
+#
+# 6. COMANDOS ÚTILES:
+#    docker-compose up -d                                  # Iniciar servicios
+#    docker-compose up -d --scale aws-skills-centers-demo=3  # Escalar a 3
+#    docker-compose ps                                     # Ver servicios corriendo
+#    docker-compose logs -f                                # Ver logs en tiempo real
+#    docker-compose stop                                   # Detener servicios
+#    docker-compose down                                   # Detener y eliminar
+#    docker-compose up -d --build                          # Reconstruir y reiniciar
+#
+# ==========================================

@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #FF9933, #FF6B35, #232F3E, #146EB4, #FF9900);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cloud-icon {
+    font-size: 80px;
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.title {
+    text-align: center;
+    color: #232F3E;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #232F3E, #146EB4, #FF9900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.subtitle {
+    text-align: center;
+    color: #333;
+    line-height: 1.8;
+}
+
+.motivational {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #146EB4;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.description strong {
+    color: #FF9900;
+    font-weight: 700;
+}
+
+.aws-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.service {
+    background: linear-gradient(135deg, #146EB4, #232F3E);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9em;
+    box-shadow: 0 4px 15px rgba(20, 110, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(20, 110, 180, 0.5);
+}
+
+.cta {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #FF9900;
+    margin-top: 30px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.info-box {
+    background: linear-gradient(135deg, #E8F4F8, #D4E9F7);
+    border-left: 5px solid #146EB4;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+    color: #232F3E;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.info-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.footer p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.footer-note {
+    font-style: italic;
+    color: #146EB4;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 25px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .motivational {
+        font-size: 1.1em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .aws-services {
+        gap: 10px;
+    }
+
+    .service {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .cta {
+        font-size: 1.2em;
+    }
+}
+

@@ -24,25 +24,49 @@ Este proyecto es parte del ecosistema educativo de **AWS Skills Centers**, donde
 **📍 Ubicaciones:** Seattle, Arlington, Ciudad del Cabo + Virtual  
 **🚀 Regístrate GRATIS:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 
+---
+
+## 📸 Vista Previa de la Aplicación
+
+![AWS Skills Centers Demo App](app.png)
+
+*Aplicación web con animación de gradiente y diseño moderno inspirado en AWS* ☁️
+
+---
+
 ## 🎯 Objetivo del Curso
 
 Este demo está diseñado en **dos partes progresivas**:
 
+```mermaid
+graph LR
+    A[🎓 Inicio] --> B[📦 Parte 1<br/>Docker Básico]
+    B --> C[🎭 Parte 2<br/>Orquestación]
+    C --> D[☁️ Conceptos<br/>AWS ECS]
+    D --> E[🚀 Producción<br/>en la Nube]
+    
+    style A fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style D fill:#232F3E,stroke:#FF9900,stroke-width:2px,color:#fff
+    style E fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+```
+
 ### Parte 1️⃣: Docker Básico (Sin Orquestador)
 Aprenderás a trabajar con un solo contenedor, entendiendo los conceptos fundamentales:
-- Construcción de imágenes
-- Ejecución de contenedores
-- Gestión manual de contenedores
-- Mapeo de puertos
-- Ciclo de vida de contenedores
+- 📦 Construcción de imágenes
+- 🚀 Ejecución de contenedores
+- 🔧 Gestión manual de contenedores
+- 🔌 Mapeo de puertos
+- ♻️ Ciclo de vida de contenedores
 
 ### Parte 2️⃣: Orquestación con Docker Compose
 Aprenderás cómo un **orquestador** simplifica la gestión de múltiples contenedores:
-- Definición declarativa de servicios
-- Gestión de múltiples contenedores como una unidad
-- Networking automático entre contenedores
-- Escalabilidad y dependencias
-- **Fundamentos para entender AWS ECS**
+- 📝 Definición declarativa de servicios
+- 🎯 Gestión de múltiples contenedores como una unidad
+- 🌐 Networking automático entre contenedores
+- ⚖️ Escalabilidad y dependencias
+- ☁️ **Fundamentos para entender AWS ECS**
 
 > 💡 **¿Por qué esto es importante?** Docker Compose te enseña los conceptos de orquestación que luego verás en AWS ECS, pero todo de forma local, sin costos y sin necesidad de cuenta AWS.
 
@@ -58,7 +82,34 @@ Aprenderás cómo un **orquestador** simplifica la gestión de múltiples conten
 - 🔄 **Reinicia contenedores** si fallan
 - 📦 **Define dependencias** entre servicios
 
-**Docker Compose** es un orquestador simple para ambientes locales.
+```mermaid
+graph TB
+    subgraph "🎭 Orquestador Docker Compose / AWS ECS"
+        O[Orquestador]
+    end
+    
+    subgraph "🌐 Red Virtual"
+        C1[📦 Contenedor 1<br/>Frontend]
+        C2[📦 Contenedor 2<br/>Backend]
+        C3[📦 Contenedor 3<br/>Database]
+    end
+    
+    O -->|Gestiona| C1
+    O -->|Gestiona| C2
+    O -->|Gestiona| C3
+    O -->|Configura Red| C1
+    O -->|Configura Red| C2
+    O -->|Configura Red| C3
+    C1 -.->|Comunica| C2
+    C2 -.->|Comunica| C3
+    
+    style O fill:#FF9900,stroke:#232F3E,stroke-width:3px,color:#fff
+    style C1 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C2 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C3 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+```
+
+**Docker Compose** es un orquestador simple para ambientes locales.  
 **AWS ECS** es un orquestador empresarial en la nube que usa los mismos conceptos.
 
 ---
@@ -86,6 +137,16 @@ docker-compose --version
 
 Una **imagen** es una plantilla inmutable que contiene tu aplicación y todas sus dependencias.
 
+```mermaid
+graph LR
+    A[📄 Dockerfile] -->|docker build| B[📦 Imagen<br/>aws-skills-centers-demo:v1]
+    B -->|docker run| C[🏃 Contenedor<br/>En ejecución]
+    
+    style A fill:#232F3E,stroke:#FF9900,stroke-width:2px,color:#fff
+    style B fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+```
+
 ```bash
 # Navega al directorio del proyecto
 cd /Users/gabriel/docker-demo
@@ -95,10 +156,10 @@ docker build -t aws-skills-centers-demo:v1 .
 ```
 
 **¿Qué hace este comando?**
-- `build`: Construye una nueva imagen
-- `-t`: Asigna un nombre (tag) a la imagen
-- `aws-skills-centers-demo:v1`: Nombre y versión de la imagen
-- `.`: Usa el Dockerfile del directorio actual
+- 🏗️ `build`: Construye una nueva imagen
+- 🏷️ `-t`: Asigna un nombre (tag) a la imagen
+- 📛 `aws-skills-centers-demo:v1`: Nombre y versión de la imagen
+- 📂 `.`: Usa el Dockerfile del directorio actual
 
 **Verifica que la imagen se creó:**
 ```bash
@@ -210,6 +271,26 @@ docker rm aws-skills-centers-web
 
 Con Docker básico, para gestionar **múltiples contenedores** tendrías que:
 
+```mermaid
+graph TB
+    subgraph "❌ Sin Orquestador - Manual y Complejo"
+        A[👤 Tú] -->|docker run| C1[Contenedor 1]
+        A -->|docker run| C2[Contenedor 2]
+        A -->|docker run| C3[Contenedor 3]
+        A -->|docker network| N[Red Manual]
+        A -.->|Monitorear| C1
+        A -.->|Monitorear| C2
+        A -.->|Monitorear| C3
+        A -.->|Reiniciar| C1
+    end
+    
+    style A fill:#ff6b6b,stroke:#c92a2a,stroke-width:2px,color:#fff
+    style C1 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C2 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C3 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style N fill:#adb5bd,stroke:#495057,stroke-width:2px
+```
+
 ❌ Ejecutar múltiples comandos `docker run` manualmente  
 ❌ Configurar las redes entre contenedores manualmente  
 ❌ Gestionar el orden de inicio de los servicios  
@@ -240,22 +321,38 @@ Docker Compose es un **orquestador de contenedores** que te permite:
 
 Para demostrar la orquestación, vamos a desplegar:
 
+```mermaid
+graph TB
+    subgraph "🎭 Docker Compose - Orquestador"
+        DC[docker-compose.yml]
+    end
+    
+    subgraph "☁️ Aplicación Desplegada"
+        F[🌐 Frontend<br/>Nginx + App Web<br/>Puerto: 8080]
+        B[🔧 Backend API<br/>Endpoints REST<br/>Puerto: 3000]
+        D[🗄️ Database<br/>Redis Cache<br/>Puerto: 6379]
+    end
+    
+    U[👥 Usuarios] -->|HTTP| F
+    F -.->|API Calls| B
+    B -.->|Cache| D
+    
+    DC -->|Gestiona| F
+    DC -->|Gestiona| B
+    DC -->|Gestiona| D
+    
+    style DC fill:#FF9900,stroke:#232F3E,stroke-width:3px,color:#fff
+    style F fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style D fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style U fill:#232F3E,stroke:#FF9900,stroke-width:2px,color:#fff
 ```
-┌─────────────────────────────────────┐
-│   Aplicación Multi-Contenedor       │
-├─────────────────────────────────────┤
-│  🌐 Frontend (Nginx)                │
-│     └─> Aplicación web              │
-│                                     │
-│  🔧 API Backend (Nginx + JSON)      │
-│     └─> API simulada                │
-│                                     │
-│  🗄️  Redis (Caché)                  │
-│     └─> Contador de visitas         │
-└─────────────────────────────────────┘
-         Gestionado por
-        Docker Compose 🎭
-```
+
+**Con un SOLO comando** (`docker-compose up`), el orquestador:
+- ✅ Construye todas las imágenes
+- ✅ Crea la red virtual
+- ✅ Inicia los servicios en orden
+- ✅ Gestiona la comunicación entre ellos
 
 ---
 
@@ -404,17 +501,31 @@ docker-compose down -v
 
 ## 🌟 Comparación: Docker vs Docker Compose vs AWS ECS
 
+```mermaid
+graph LR
+    A[🎓 Aprender<br/>Docker Básico] --> B[🎭 Practicar<br/>Docker Compose]
+    B --> C[☁️ Producción<br/>AWS ECS]
+    
+    A -.->|1 contenedor| A1[Local]
+    B -.->|Múltiples contenedores| B1[Local]
+    C -.->|Múltiples contenedores| C1[Nube AWS]
+    
+    style A fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+```
+
 | Aspecto | Docker Básico | Docker Compose | AWS ECS |
 |---------|---------------|----------------|---------|
-| **Ámbito** | 1 contenedor | Múltiples contenedores locales | Múltiples contenedores en la nube |
-| **Comandos** | Múltiples `docker run` | Un `docker-compose up` | Definición de Task + Service |
-| **Networking** | Manual | Automático (local) | Automático (VPC, ALB) |
-| **Escalado** | Manual | `--scale` | Auto Scaling Groups |
-| **Alta disponibilidad** | No | Limitada | Sí (multi-AZ) |
-| **Reinicio automático** | Con `--restart` | Con `restart: always` | Automático |
-| **Load Balancer** | No | No (necesitas nginx) | ALB/NLB integrado |
-| **Costo** | Gratis (local) | Gratis (local) | Pagas por recursos AWS |
-| **Configuración** | Línea de comandos | `docker-compose.yml` | Task Definitions (JSON) |
+| **🎯 Ámbito** | 1 contenedor | Múltiples contenedores locales | Múltiples contenedores en la nube |
+| **⌨️ Comandos** | Múltiples `docker run` | Un `docker-compose up` | Definición de Task + Service |
+| **🌐 Networking** | Manual | Automático (local) | Automático (VPC, ALB) |
+| **⚖️ Escalado** | Manual | `--scale` | Auto Scaling Groups |
+| **🔄 Alta disponibilidad** | No | Limitada | Sí (multi-AZ) |
+| **♻️ Reinicio automático** | Con `--restart` | Con `restart: always` | Automático |
+| **⚡ Load Balancer** | No | No (necesitas nginx) | ALB/NLB integrado |
+| **💰 Costo** | Gratis (local) | Gratis (local) | Pagas por recursos AWS |
+| **📝 Configuración** | Línea de comandos | `docker-compose.yml` | Task Definitions (JSON) |
 
 ---
 
@@ -422,15 +533,46 @@ docker-compose down -v
 
 Al aprender Docker Compose, entiendes estos conceptos que se traducen directamente a ECS:
 
+```mermaid
+graph LR
+    subgraph "💻 Local - Docker Compose"
+        A1[service]
+        A2[docker-compose up]
+        A3[networks]
+        A4[deploy.resources]
+    end
+    
+    subgraph "☁️ AWS - ECS"
+        B1[Task Definition]
+        B2[Service]
+        B3[VPC + Security Groups]
+        B4[Task CPU/Memory]
+    end
+    
+    A1 -.->|Mismo concepto| B1
+    A2 -.->|Mismo concepto| B2
+    A3 -.->|Mismo concepto| B3
+    A4 -.->|Mismo concepto| B4
+    
+    style A1 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style A2 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style A3 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style A4 fill:#146EB4,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B1 fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B2 fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B3 fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style B4 fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+```
+
 | Docker Compose | AWS ECS | Concepto |
 |----------------|---------|----------|
-| `service` | Task Definition | Cómo correr un contenedor |
-| `docker-compose up` | Service | Instancia corriendo |
-| `networks` | VPC + Security Groups | Networking |
-| `depends_on` | Service Dependencies | Orden de inicio |
-| `deploy.resources` | Task CPU/Memory | Límites de recursos |
-| `replicas` | Desired Count | Cuántas instancias |
-| Host local | ECS Cluster | Dónde corren los contenedores |
+| 📝 `service` | ☁️ Task Definition | Cómo correr un contenedor |
+| 🚀 `docker-compose up` | ⚡ Service | Instancia corriendo |
+| 🌐 `networks` | 🔒 VPC + Security Groups | Networking |
+| ⏱️ `depends_on` | 🔗 Service Dependencies | Orden de inicio |
+| 💾 `deploy.resources` | 📊 Task CPU/Memory | Límites de recursos |
+| 📈 `replicas` | 🎯 Desired Count | Cuántas instancias |
+| 💻 Host local | ☁️ ECS Cluster | Dónde corren los contenedores |
 
 ---
 

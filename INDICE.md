@@ -220,13 +220,14 @@ La aplicación web incluye:
 
 ---
 
-## 📞 Soporte
+## 🌐 Conecta
 
-Si tienes preguntas:
+¿Preguntas o quieres aprender más?
 
-- 📧 Contacta a tu instructor
-- 💬 Únete a la comunidad de AWS Skills Centers
-- 🐛 Reporta issues en el repositorio
+- 👨‍🏫 **Instructor:** Gabriel - [AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 🎓 **Bootcamp Institute:** [bootcamp.institute](https://bootcamp.institute) - Formación Cloud para LATAM
+- 💬 **AWS Skills Centers:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
+- 🐛 **Reporta issues:** GitHub del proyecto
 
 ---
 
@@ -290,7 +291,8 @@ Este proyecto es solo el comienzo. Continúa tu aprendizaje con **clases gratuit
 ### 🌟 AWS Skills Centers ofrece:
 
 - ✅ **Formación 100% gratuita** en la nube
-- ✅ **Clases presenciales y virtuales** con instructores certificados
+- ✅ **Clases presenciales** en Seattle, Arlington, Ciudad del Cabo
+- ✅ **Clases virtuales en español** con [Bootcamp Institute](https://bootcamp.institute) para toda LATAM
 - ✅ **Exhibiciones interactivas** de tecnologías cloud
 - ✅ **Eventos de networking** con empleadores
 - ✅ **Para todos** - sin requisitos previos

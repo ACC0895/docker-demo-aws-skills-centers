@@ -139,12 +139,14 @@ docker-compose down
 
 Todos los contribuidores serán listados en el README.
 
-## 📞 Preguntas
+## 🌐 Conecta
 
-¿Tienes preguntas sobre cómo contribuir?
+¿Preguntas sobre cómo contribuir?
 
-- Abre un [issue con el tag `question`](https://github.com/tuusuario/docker-demo/issues)
-- Únete a la comunidad de [AWS Skills Centers](https://aws.amazon.com/es/training/skills-centers/)
+- 👨‍🏫 **Instructor:** [Gabriel - AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 🐛 **GitHub Issues:** [Abre un issue con el tag `question`](https://github.com/tuusuario/docker-demo/issues)
+- 🎓 **Bootcamp Institute:** [bootcamp.institute](https://bootcamp.institute)
+- 💬 **AWS Skills Centers:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 
 ## 📜 Código de Conducta
 

@@ -185,6 +185,14 @@ Lo que aprendiste aquí se traduce a AWS ECS:
 
 ---
 
+## 🌐 Conecta
+
+- 👨‍🏫 **Instructor:** [Gabriel - AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 🎓 **Formación Cloud LATAM:** [Bootcamp Institute](https://bootcamp.institute)
+- 💬 **AWS Skills Centers:** [Formación gratuita](https://aws.amazon.com/es/training/skills-centers/)
+
+---
+
 **© 2025 Bootcamp Institute**
 
 *Empoderando la próxima generación de profesionales cloud* ☁️

@@ -233,11 +233,22 @@ Este es solo el comienzo. Continúa tu aprendizaje con clases gratuitas:
 
 ---
 
-## 📞 ¿Necesitas Ayuda?
+## 🌐 Conecta y Aprende Más
 
-- 📖 Primero revisa: [README.md](README.md) - Preguntas frecuentes
-- 🐛 Reporta bugs: [GitHub Issues](https://github.com/TU-USUARIO/docker-demo-aws-skills-centers/issues)
-- 💬 Comunidad: [AWS Skills Centers](https://aws.amazon.com/es/training/skills-centers/)
+### 👨‍🏫 Tu Instructor
+**Gabriel** - AWS Community Builder  
+🔗 [builder.aws.com/community/@awshero](https://builder.aws.com/community/@awshero)
+
+### 🎓 Formación Profesional
+**Bootcamp Institute** - Cloud Computing para toda LATAM en español  
+🔗 [bootcamp.institute](https://bootcamp.institute)
+
+### 💬 Comunidad
+**AWS Skills Centers** - Formación gratuita global  
+🔗 [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
+
+### 🐛 Reportar Problemas
+[GitHub Issues](https://github.com/TU-USUARIO/docker-demo-aws-skills-centers/issues)
 
 ---
 

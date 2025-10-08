@@ -21,7 +21,8 @@ Este proyecto es parte del ecosistema educativo de **AWS Skills Centers**, donde
 - ✅ Desde nivel principiante hasta avanzado
 - ✅ Sin requisitos previos - ¡todos son bienvenidos!
 
-**📍 Ubicaciones:** Seattle, Arlington, Ciudad del Cabo + Virtual  
+**📍 Ubicaciones:** Seattle, Arlington, Ciudad del Cabo  
+**🌐 Clases virtuales en español:** Ahora disponible para toda LATAM con [Bootcamp Institute](https://bootcamp.institute)  
 **🚀 Regístrate GRATIS:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 
 ---
@@ -720,15 +721,16 @@ Desarrollado con ❤️ para empoderar la próxima generación de profesionales 
 - ✅ **Instructores certificados de AWS** en vivo
 - ✅ **Exhibiciones interactivas** (robótica, ML, IoT)
 - ✅ **Eventos de networking** con empleadores
-- ✅ **Certificaciones AWS** preparación
+- ✅ **Preparación para certificaciones AWS**
 - ✅ **Abierto a todos** - sin requisitos previos
+- 🌎 **Para LATAM:** Formación en español con [Bootcamp Institute](https://bootcamp.institute)
 
 ### 📍 Ubicaciones:
 
 - 🇺🇸 Seattle, Washington
 - 🇺🇸 Arlington, Virginia
 - 🇿🇦 Ciudad del Cabo, Sudáfrica
-- 🌐 Clases virtuales disponibles
+- 🌎 **Clases virtuales en español para toda LATAM** con [Bootcamp Institute](https://bootcamp.institute)
 
 ### 🚀 Regístrate Ahora:
 
@@ -738,13 +740,14 @@ Desarrollado con ❤️ para empoderar la próxima generación de profesionales 
 
 ---
 
-## 📞 Soporte
+## 🌐 Conecta
 
-Si tienes preguntas o necesitas ayuda:
+¿Tienes preguntas o quieres profundizar más?
 
-- 📧 Contacta a tu instructor
-- 💬 Únete a la comunidad de AWS Skills Centers
-- 🐛 Reporta problemas en la [sección de Issues](https://github.com/tuusuario/docker-demo/issues)
+- 👨‍🏫 **Instructor:** Gabriel - [AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 🎓 **Bootcamp Institute:** Formación en Cloud Computing para LATAM - [bootcamp.institute](https://bootcamp.institute)
+- 💬 **Comunidad AWS Skills Centers:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
+- 🐛 **Reporta issues:** [GitHub Issues](https://github.com/tuusuario/docker-demo/issues)
 
 ---
 

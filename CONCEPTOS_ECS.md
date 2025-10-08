@@ -412,6 +412,17 @@ Para profundizar en ECS:
 
 ---
 
+## 🌐 Conecta y Aprende Más
+
+¿Preguntas o quieres profundizar?
+
+- 👨‍🏫 **Instructor:** Gabriel - [AWS Community Builder](https://builder.aws.com/community/@awshero)
+- 🎓 **Bootcamp Institute:** [Formación Cloud para LATAM](https://bootcamp.institute)
+- 💬 **AWS Skills Centers:** [Comunidad global](https://aws.amazon.com/es/training/skills-centers/)
+- 🐛 **GitHub Issues:** [Reporta problemas](https://github.com/tuusuario/docker-demo/issues)
+
+---
+
 ## 🎯 Conceptos Clave para Recordar
 
 1. **Docker Compose = Orquestador Local**

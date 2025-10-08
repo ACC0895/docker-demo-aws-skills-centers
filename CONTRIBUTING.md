@@ -17,7 +17,7 @@ Este repositorio es un recurso educativo para enseñar Docker y orquestación de
 
 ¿Encontraste un bug o error en la documentación?
 
-1. Ve a [Issues](https://github.com/tuusuario/docker-demo/issues)
+1. Ve a [Issues](https://github.com/gabanox/docker-demo-aws-skills-centers/issues)
 2. Crea un nuevo issue
 3. Usa el template de bug report
 4. Describe claramente el problema
@@ -26,7 +26,7 @@ Este repositorio es un recurso educativo para enseñar Docker y orquestación de
 
 ¿Tienes ideas para mejorar el contenido?
 
-1. Ve a [Issues](https://github.com/tuusuario/docker-demo/issues)
+1. Ve a [Issues](https://github.com/gabanox/docker-demo-aws-skills-centers/issues)
 2. Crea un nuevo issue con el tag `enhancement`
 3. Explica tu propuesta y su valor educativo
 
@@ -35,11 +35,11 @@ Este repositorio es un recurso educativo para enseñar Docker y orquestación de
 #### Proceso:
 
 ```bash
-# 1. Haz fork del repositorio
+# 1. Haz fork del repositorio en GitHub
 
 # 2. Clona tu fork
-git clone https://github.com/tu-usuario/docker-demo.git
-cd docker-demo
+git clone https://github.com/tu-usuario/docker-demo-aws-skills-centers.git
+cd docker-demo-aws-skills-centers
 
 # 3. Crea una rama para tu contribución
 git checkout -b feature/mejora-descripcion
@@ -144,7 +144,7 @@ Todos los contribuidores serán listados en el README.
 ¿Preguntas sobre cómo contribuir?
 
 - 👨‍🏫 **Instructor:** [Gabriel - AWS Community Builder](https://builder.aws.com/community/@awshero)
-- 🐛 **GitHub Issues:** [Abre un issue con el tag `question`](https://github.com/tuusuario/docker-demo/issues)
+- 🐛 **GitHub Issues:** [Abre un issue con el tag `question`](https://github.com/gabanox/docker-demo-aws-skills-centers/issues)
 - 🎓 **Bootcamp Institute:** [bootcamp.institute](https://bootcamp.institute)
 - 💬 **AWS Skills Centers:** [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 

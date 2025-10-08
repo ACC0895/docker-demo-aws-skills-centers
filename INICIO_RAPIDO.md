@@ -24,7 +24,7 @@ git --version
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/TU-USUARIO/docker-demo-aws-skills-centers.git
+git clone https://github.com/gabanox/docker-demo-aws-skills-centers.git
 
 # Entra al directorio
 cd docker-demo-aws-skills-centers
@@ -248,7 +248,7 @@ Este es solo el comienzo. Continúa tu aprendizaje con clases gratuitas:
 🔗 [aws.amazon.com/es/training/skills-centers](https://aws.amazon.com/es/training/skills-centers/)
 
 ### 🐛 Reportar Problemas
-[GitHub Issues](https://github.com/TU-USUARIO/docker-demo-aws-skills-centers/issues)
+[GitHub Issues](https://github.com/gabanox/docker-demo-aws-skills-centers/issues)
 
 ---
 

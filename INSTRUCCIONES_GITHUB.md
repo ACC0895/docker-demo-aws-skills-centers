@@ -284,9 +284,9 @@ git remote -v
 
 Tu repositorio ya está público y disponible para que estudiantes de todo el mundo aprendan Docker y orquestación.
 
-**URL de tu repo será:**
+**✅ Tu repositorio está publicado en:**
 ```
-https://github.com/TU-USUARIO/docker-demo-aws-skills-centers
+https://github.com/gabanox/docker-demo-aws-skills-centers
 ```
 
 **Compártela con:**
